@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lyrics Here</title>
+    </head>
+    <body>
+        {% include 'nav.html'%}
+        <div id="header">
+            <h1>Input Lyrics</h1>
+        </div>
+        <div class="frame">
+            <form method="get">
+                {% csrf_token %}
+                <table class="form">
+                {{ form }}
+                </table>
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+        <div>
+            <p>Artist match: {{ artist }}</p>
+            <p>Matching decade: {{ decade }}</p>
+        </div>
+        
+        {% if err %}
+        <div class="error">
+            {{ err|safe }}
+        </div>
+        {% endif %}

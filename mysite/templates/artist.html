@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Artists Here</title>
+    </head>
+    <body>
+        {% include 'nav.html'%}
+        <div id="header">
+            <h1>Input Artist</h1>
+        </div>
+        <p> Select Artist from the Following List!</p>
+        <p> 'Taylor Swift','Brenda Lee','James Brown','The Beach Boys','Neil Diamond'</p>
+        <p> 'Eminem','Diana Ross','Beyonce','Stevie Wonder','Kenny Chesney', </p>
+        <p> 'Jackie Wilson','The Beatles','Madonna','Ray Charles','Justin Bieber'</p>
+        <p> 'Aretha Franklin','Marvin Gaye','Future','Glee Cast','Drake','Rod Stewart'</p>
+        <p> 'Connie Francis','Tim McGraw','Lil Wayne','Dionne Warwick','The Rolling Stones'</p>
+        <p> 'Chris Brown','Chicago','Elton John','Kanye West','The Temptations','Fats Domino','Elvis Presley'</p>
+        <div class="frame">
+            <form method="get">
+                {% csrf_token %}
+                <table class="form">
+                {{ form }}
+                </table>
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+        <div>
+            <p>Most Similar Artist: {{ artist }}</p>
+        </div>
+        
+        {% if err %}
+        <div class="error">
+            {{ err|safe }}
+        </div>
+        {% endif %}
