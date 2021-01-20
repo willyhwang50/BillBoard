@@ -1,4 +1,4 @@
-# CS 122 Project: Billboard Analysis
+# Billboard Analysis
 # Yongju Kim, Heeseung Hwang, Jeonghwan Lee, Hyun In Park
 
 All of the data and the models are accessible in the files,
